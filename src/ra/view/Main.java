@@ -9,10 +9,9 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) {
         UserService userService = new UserService();
-        Set<RoleName> set = new HashSet<>();
+
         Set<RoleName> set2 = new HashSet<>();
         set2.add(RoleName.ADMIN);
-        set.add(RoleName.USER);
         User admin = new User();
         admin.setId(1);
         admin.setStatus(true);

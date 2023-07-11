@@ -23,9 +23,9 @@ public class OrderManager {
             System.out.println("|  3  | Hiển thị Đơn hàng đã chấp nhận.                                                |");
             System.out.println("|  4  | Hiển thị Đơn hàng đã hủy.                                                      |");
             System.out.println("|  5  | Hiển thị Chi tiết Đơn hàng.                                                    |");
-            System.out.println("|  6  | Quay lại.                                                                      |");
+            System.out.println("|  6  | Quay lại .                                                                     |");
             System.out.println("+-----+--------------------------------------------------------------------------------+");
-            System.out.println("| Nhập lựa chọn của bạn: ");
+            System.out.println("| Nhập lựa chọn: ");
             int choice = InputMethods.getInteger();
             switch (choice) {
                 case 1:
@@ -49,9 +49,9 @@ public class OrderManager {
                 case 6:
                     break;
                 default:
-                    System.err.println("Vui lòng nhập số từ 0 đến 5");
+                    System.err.println("Vui lòng nhập số từ 1 - 6");
             }
-            if (choice == 0) {
+            if (choice == 6) {
                 break;
             }
         }
@@ -76,7 +76,7 @@ public class OrderManager {
                     Navbar.menuAdmin();
                     break;
                 default:
-                    System.err.println("Nhập lựa chọn từ 1 đến 3");
+                    System.err.println("Nhập lựa chọn từ 1 - 3");
             }
 
         }
@@ -84,9 +84,9 @@ public class OrderManager {
     public  void  showAllOrderAllUser(){
         for (Order od:  orderController.findAll()
              ) {
-            System.out.println("+-----+--------------------------------------------------------------------------------+");
+            System.out.println("+--------------------------------------------------------------------------------------+");
             System.out.println(od);
-            System.out.println("+-----+--------------------------------------------------------------------------------+");
+            System.out.println("+--------------------------------------------------------------------------------------+");
         }
     }
 
@@ -98,9 +98,9 @@ public class OrderManager {
              System.err.println("Không tìm thấy mã đơn hàng! ");
 
          } else if (comfirmOrder.getStatus()==0) {
-             System.out.println("Bạn muốn xác nhận đơn hàng này chứ ?");
+             System.out.println("| Bạn muốn xác nhận đơn hàng này chứ ?");
              System.out.println("1. Đồng ý");
-             System.out.println("2. Hủy bỏ");
+             System.out.println("2. Không");
              int choice =InputMethods.getPositiveInteger();
              if (choice==1){
                  System.out.println("Đã xác nhận !");
@@ -150,23 +150,29 @@ public class OrderManager {
         }
 
         // in ra chi tiết hóa đơn
-        System.out.printf("———————————————————————————————Chi tiết Đơn hàng————————————————————————————");
-        System.out.printf("                               Mã đơn hàng : %3d ", order.getId());
-        System.out.println("———————————————————————————————————Thông tin————————————————————————————————");
-        System.out.print("Người nhận : " + order.getReceiver() + " | Điện thoại : " + order.getPhoneNumber());
-        System.out.println("Email : " +order.getEmail() + " Địa chỉ : " + order.getAddress());
-        System.out.println("———————————————————————————————————Chi tiết—————————————————————————————————");
+        System.out.println("+--------------------------------------------------------------------------------------+");
+        System.out.println("|                      ********** Chi tiết Đơn hàng **********                         |");
+        System.out.println("+--------------------------------------------------------------------------------------+");
+        System.out.println("| Mã đơn hàng : " + order.getId());
+        System.out.println("+--------------------------------------------------------------------------------------+");
+        System.out.println("+                        ********** Thông tin **********                               |");
+        System.out.println("+--------------------------------------------------------------------------------------+");
+        System.out.println("| Người nhận : " + order.getReceiver() + " | Điện thoại : " + order.getPhoneNumber());
+        System.out.println("| Email : " +order.getEmail() + "| Địa chỉ : " + order.getAddress());
+        System.out.println("+--------------------------------------------------------------------------------------+");
+        System.out.println("+                         ********** Chi tiết **********                               +");
+        System.out.println("+--------------------------------------------------------------------------------------+");
         for (CartItem ci : order.getOrderDetail()) {
             System.out.println(ci);
         }
-        System.out.println("Tổng cộng : " + order.getTotal());
-        System.out.println("————————————————————————————————————————————————————————————————————");
+        System.out.println("| Tổng cộng : " + order.getTotal());
+        System.out.println("+--------------------------------------------------------------------------------------+");
         if (order.getStatus() == 0) {
 
-            System.out.println("Bạn chắc chắn muốn hủy đơn hàng này?");
+            System.out.println("| Bạn chắc chắn muốn hủy đơn hàng này?");
             System.out.println("1. Đồng ý");
             System.out.println("2. Không đồng ý");
-            System.out.println("Nhập lựa chọn của bạn: ");
+            System.out.println("| Nhập lựa chọn 1 hoặc 2: ");
 
             int choice = InputMethods.getInteger();
             if (choice == 1) {

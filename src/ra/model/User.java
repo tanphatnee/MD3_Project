@@ -104,7 +104,7 @@ public class User implements Serializable {
         this.cart = cart;
     }
     public  void inputUserData(){
-        System.out.println("nhập mật khẩu mới :");
+        System.out.println("| Nhập mật khẩu mới:");
         this.password= InputMethods.getpassword();
     }
     @Override

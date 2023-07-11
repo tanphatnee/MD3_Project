@@ -1,7 +1,5 @@
 package ra.model;
-
 import ra.config.InputMethods;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -115,15 +113,15 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("%-15s | %-20s | %-10s | %-10s | %-10s | %-10s " ,
-                "Mã sản phẩm", "Tên sản phẩm", "Giá", "Mô tả", "Sl trong kho", "Hãng")
-                + "\n" + "-"
-                + String.format("\n%-15s | %-20s | %-10s | %-10s | %-10s | %-10s",
-                productId, productName, productPrice , description, stock , trademark.getTrademarkName())
-                + "\n" + "-"
-                + String.format("\nTình trạng: %s", status ? "Bán" : "hết hàng")
-                + "\n" + "—";
+        String tableBuilder = "|--------------+----------------------+-----------------+---------------------------+------------+-------------------|\n" +
+                String.format("%-15s | %-25s | %-15s | %-30s | %-10s | %-20s\n",
+                        "Mã sản phẩm", "Tên sản phẩm", "Giá", "Mô tả", "Sl trong kho", "Hãng") +
+                String.format(" %-15s| %-25s| %-15s | %-30s | %-10s | %-20s |\n",
+                        productId, productName, productPrice, description, stock, trademark.getTrademarkName()) +
+                String.format("Tình trạng: %s\n", status ? "Còn hàng" : "hết hàng");
+        return tableBuilder;
     }
+
 
 
 

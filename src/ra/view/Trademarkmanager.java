@@ -17,9 +17,9 @@ public class Trademarkmanager {
             System.out.println("|  3  | Chỉnh sửa thông tin thương hiệu.                                               |");
             System.out.println("|  4  | Xóa danh mục theo mã thương hiệu sản phẩm.                                     |");
             System.out.println("|  5  | Tìm kiếm thương hiệu.                                                          |");
-            System.out.println("|  6  | Quay lại.                                                                      |");
+            System.out.println("|  6  | Quay lại trang Admin.                                                          |");
             System.out.println("+-----+--------------------------------------------------------------------------------+");
-            System.out.println("| Mời bạn lựa chọn: ");
+            System.out.println("| Nhập lựa chọn: ");
             int choose = InputMethods.getInteger();
             switch (choose) {
                 case 1:
@@ -40,7 +40,7 @@ public class Trademarkmanager {
                 case 6:
                     return;
                 default:
-                    System.err.println("vui lòng nhập từ 0 đến 5");
+                    System.err.println("vui lòng nhập từ 1 đến 6");
                     break;
             }
         }
@@ -50,18 +50,18 @@ public class Trademarkmanager {
         System.out.print("| Bạn muốn thêm vào bao nhiêu thương hiệu: ");
         int n = InputMethods.getInteger();
         for (int i = 0; i < n; i++) {
-            System.out.println("Danh mục thứ " + (i + 1));
+            System.out.println("| Danh mục thứ " + (i + 1));
             Trademark trademark = new Trademark();
             trademark.setId(trademarkController.getNewId());
             trademark.inputData();
-            System.out.println("Bạn đã thêm thành công !");
+            System.out.println("Thêm mới thành công !");
             trademarkController.save(trademark);
         }
     }
 
     public void showListTrademark() {
         if (trademarkController.findAll().size() == 0) {
-            System.err.println("Chưa có thương hiệu nào nào");
+            System.err.println("Chưa có thương hiệu nào !");
             return;
         }
         for (Trademark c : trademarkController.findAll()) {
@@ -70,24 +70,24 @@ public class Trademarkmanager {
     }
 
     public void editTrademark() {
-        System.out.print("| Bạn muốn sửa thương hệu có mã là : ");
+        System.out.print("| Bạn muốn sửa thương hệu có Id là : ");
         int id = InputMethods.getInteger();
         Trademark trademark = trademarkController.findById(id);
         if (trademark == null) {
-            System.err.println("Không tồn tại thương hiệu này.");
+            System.err.println("Không tìm thấy thương hiệu này.");
             return;
         }
         Trademark newtrademark = new Trademark();
         newtrademark.setId(trademark.getId());
         newtrademark.inputData();
-        System.out.println("Bạn đã sửa thành công !");
+        System.out.println("Sửa thành công !");
         trademarkController.save(newtrademark);
     }
 
     public void deleteTrademark() {
-        System.out.print("| Bạn muốn xoá thương hiệu có mã là : ");
+        System.out.print("| Bạn muốn xoá thương hiệu có Id là : ");
         int id = InputMethods.getInteger();
-        System.out.println(" Đã xoá thành công!");
+        System.out.println(" Xoá thành công!");
         trademarkController.delete(id);
     }
     public void searchTrademarkByName() {
@@ -101,7 +101,7 @@ public class Trademarkmanager {
             }
         }
         if (!flag) {
-            System.err.println("Không tìm thấy thương hiệu nào !");
+            System.err.println("Không tìm thấy thương hiệu này !");
         }
     }
 }

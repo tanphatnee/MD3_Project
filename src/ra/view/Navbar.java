@@ -15,11 +15,11 @@ public class Navbar {
     public static void menuStore() {
         while (true) {
             System.out.println("+--------------------------------------------------------------------------------------+");
-            System.out.println("|                                    SHOP ĐỒ CÂU                                       |");
+            System.out.println("|                          ********** SHOP ĐỒ CÂU **********                           |");
             System.out.println("|---------------------|---------------------|------------------------|-----------------|");
             System.out.println("|    1. Đăng nhập     +      2. Đăng ký     +      3. Xem sản phẩm   +   4. Thoát      |");
             System.out.println("|---------------------|---------------------|------------------------|-----------------|");
-            System.out.println("| Nhập lựa chọn : ");
+            System.out.println("| Nhập lựa chọn: ");
 
             int choice = InputMethods.getInteger();
             switch (choice) {
@@ -58,7 +58,7 @@ public class Navbar {
             System.out.println("|  5  | Lịch sử đơn hàng.                                                              |");
             System.out.println("|  6  | Đăng xuất.                                                                     |");
             System.out.println("+-----+--------------------------------------------------------------------------------+");
-            System.out.println("Nhập lựa chọn của bạn: ");
+            System.out.println("Nhập lựa chọn: ");
             int choice = InputMethods.getInteger();
             switch (choice) {
                 case 1:
@@ -104,6 +104,7 @@ public class Navbar {
             System.out.println("|  4  | Quản lý đơn hàng.                                                              |");
             System.out.println("|  5  | Đăng xuất.                                                                     |");
             System.out.println("+-----+--------------------------------------------------------------------------------+");
+            System.out.println("| Nhập lựa chọn: ");
             int choice = InputMethods.getInteger();
             switch (choice) {
                 case 1:
@@ -127,7 +128,7 @@ public class Navbar {
                     logOut();
                     break;
                 default:
-                    System.err.println("Vui lòng nhập số từ 0 đến 5");
+                    System.err.println("Vui lòng nhập số từ 1 đến 5");
             }
             if (choice == 0) {
                 break;
@@ -143,6 +144,7 @@ public class Navbar {
         System.out.println("|  2  | Khóa/Mở khóa tài khoản.                                                        |");
         System.out.println("|  3  | Quay lại trang Admin.                                                          |");
         System.out.println("+-----+--------------------------------------------------------------------------------+");
+        System.out.println("| Nhập lựa chọn: ");
     }
      public static void menuOrderConfirmManager() {
         System.out.println("+--------------------------------------------------------------------------------------+");
@@ -150,8 +152,9 @@ public class Navbar {
         System.out.println("+-----+--------------------------------------------------------------------------------+");
         System.out.println("|  1  | Hiển thị tất cả các đơn hàng.                                                  |");
         System.out.println("|  2  | Xác nhận đơn hàng.                                                             |");
-        System.out.println("|  3  | Quay lại.                                                                      |");
+        System.out.println("|  3  | Quay lại trang Admin.                                                          |");
         System.out.println("+-----+--------------------------------------------------------------------------------+");
+         System.out.println("| Nhập lựa chọn: ");
     }
 
     public static void menuCart() {
@@ -162,10 +165,10 @@ public class Navbar {
         System.out.println("|  2  | Thay đổi số lượng.                                                             |");
         System.out.println("|  3  | Xóa sản phẩm.                                                                  |");
         System.out.println("|  4  | Xóa tất cả.                                                                    |");
-        System.out.println("|  5  | Thủ tục thanh toán.                                                            |");
-        System.out.println("|  6  | Quay lại.                                                                      |");
+        System.out.println("|  5  | Trang thanh toán.                                                              |");
+        System.out.println("|  6  | Tiếp tục mua hàng.                                                             |");
         System.out.println("+-----+--------------------------------------------------------------------------------+");
-
+        System.out.println("| Nhập lựa chọn: ");
     }
 
     public static void login() {

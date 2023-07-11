@@ -23,9 +23,9 @@ public class ProductManager  {
              System.out.println("|  4  | Xóa sản phẩm theo mã sản phẩm.                                                 |");
              System.out.println("|  5  | Tìm kiếm sản phẩm theo tên sản phẩm.                                           |");
              System.out.println("|  6  | Chỉnh sửa thông tin sản phẩm.                                                  |");
-             System.out.println("|  7  | Quay lại.                                                                      |");
+             System.out.println("|  7  | Quay lại trang Admin.                                                          |");
              System.out.println("+-----+--------------------------------------------------------------------------------+");
-             System.out.print("Mời bạn lựa chọn: ");
+             System.out.println("| Nhập lựa chọn: ");
             int choose = InputMethods.getInteger();
             switch (choose) {
                 case 1:
@@ -49,7 +49,7 @@ public class ProductManager  {
                 case 7:
                     return;
                 default:
-                    System.err.println("vui lòng nhập từ 0 đến 7.");
+                    System.err.println("vui lòng nhập từ 1 đến 7.");
                     break;
             }
         }
@@ -68,10 +68,10 @@ public class ProductManager  {
     }
 
     public void addNewProduct() {
-        System.out.print("| Bạn muốn nhập vào  nhiêu sản phẩm: ");
+        System.out.print("| Bạn muốn nhập vào mấy sản phẩm: ");
         int n = InputMethods.getInteger();
         for (int i = 0; i < n; i++) {
-            System.out.println("Sản phẩm thứ " + (i + 1));
+            System.out.println("| Sản phẩm thứ " + (i + 1));
             Product product = new Product();
             product.setProductId(productController.getNewId());
             product.inputData(trademarkController.findAll());
@@ -89,7 +89,7 @@ public class ProductManager  {
     }
     public  void  sortProductByPrice(){
         Collections.sort(productController.findAll(),(p1,p2) ->Double.compare(p1.getProductPrice(), p2.getProductPrice()));
-        System.out.println("Sản phẩm đã được sắp xếp theo thứ tự  tăng. ");
+        System.out.println("Sản phẩm đã được sắp xếp theo thứ tự tăng dần. ");
     }
 
     public void searchProductByName() {
@@ -103,7 +103,7 @@ public class ProductManager  {
             }
         }
         if (!flag) {
-            System.err.println("Không có sản phẩm nào. ");
+            System.err.println("Không tìm thấy sản phẩm này. ");
         }
     }
 
@@ -112,7 +112,7 @@ public class ProductManager  {
         int id = InputMethods.getInteger();
         Product product = productController.findById(id);
         if (product == null) {
-            System.err.println("Không có sản phẩm bạn muốn tìm.");
+            System.err.println("Không tìm thấy sản phẩm bạn muốn sửa.");
             return;
         }
         Product newProduct = new Product();

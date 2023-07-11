@@ -36,15 +36,15 @@ public class UserMananger {
 
     public void changeStatus() {
         // lấy ra userlogin để check quyền xem có được quyền khóa tài khoản kia không
-        System.out.println("| Nhập mã tài khoản: ");
+        System.out.println("| Nhập Id tài khoản: ");
         int id = InputMethods.getInteger();
         if (id ==1){
-            System.err.println("Mã tài khoản không tồn tại! ");
+            System.err.println("Tài khoản không tồn tại! ");
             return;
         }
         User user = userController.findById(id);
         if (user == null) {
-            System.err.println("Mã tài khoản không tồn tại! ");
+            System.err.println("Id tài khoản không tồn tại! ");
         } else {
             if (user.isStatus() == false){
                 System.out.println("Đã mở tài khoản !");

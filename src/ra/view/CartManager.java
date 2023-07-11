@@ -45,11 +45,11 @@ public class CartManager {
                     // tạo hóa đơn
                      checkout(productController);
                     break;
-                case 0:
+                case 6:
                     Navbar.menuUser();
                     break;
                 default:
-                    System.err.println("Vui lòng chọn số (1-5) !");
+                    System.err.println("Vui lòng chọn số (1-6) !");
             }
 
         }
@@ -76,12 +76,12 @@ public class CartManager {
         int cartItemID = InputMethods.getInteger();
         CartItem cartItem = cartController.findById(cartItemID);
          if(cartItem ==null){
-            System.err.println("không tìm thấy mã giỏ hàng cần thay đổi");
+            System.err.println("Không tìm thấy mã giỏ hàng cần thay đổi!");
             return;
         }
         System.out.println("| Nhập số lượng: ");
         cartItem.setQuantity(InputMethods.getInteger());
-        System.out.println("Số lượng sản phẩm trong giỏ đã được cập nhật");
+        System.out.println("Số lượng sản phẩm trong giỏ đã được cập nhật.");
         cartController.save(cartItem);
 
     }

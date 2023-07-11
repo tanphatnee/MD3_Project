@@ -32,12 +32,12 @@ public class Trademark  implements Serializable {
         this.trademarkName = trademarkName;
     }
     public  void inputData(){
-        System.out.println("nhập tên hãng");
+        System.out.println("| Nhập tên hãng: ");
         this.trademarkName= InputMethods.getString();
     }
 
     @Override
     public String toString() {
-        return " Mã của hãng : " + id + " | Tên của hãng :" + trademarkName;
+        return "| Id : " + id + " | Tên thương hiệu :" + trademarkName;
     }
 }
