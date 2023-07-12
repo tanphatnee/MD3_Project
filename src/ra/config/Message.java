@@ -4,9 +4,9 @@ public class Message {
     public static String getStatusByCode(byte code){
         switch (code){
             case 0 :
-                return "Đang chờ vận chuyển ";
+                return "Đang chờ xác nhận ";
             case 1:
-                return " Đã được vận chuyển ";
+                return " Đã được xác nhận ";
             case 2:
                 return " Đã huỷ ! ";
             default:

@@ -49,7 +49,7 @@ public class Navbar {
     public static void menuUser() {
         while (true) {
             System.out.println("+--------------------------------------------------------------------------------------+");
-            System.out.println("|                            ********** Menu **********                                |");
+            System.out.println("|                            ********** MenuUser **********                            |");
             System.out.println("+-----+--------------------------------------------------------------------------------+");
             System.out.println("|  1  | Hiển thị danh sách sản phẩm.                                                   |");
             System.out.println("|  2  | Thêm vào giỏ hàng.                                                             |");

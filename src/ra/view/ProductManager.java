@@ -17,11 +17,11 @@ public class ProductManager  {
              System.out.println("+--------------------------------------------------------------------------------------+");
              System.out.println("|                       ********** Quản Lý Sản Phẩm **********                         |");
              System.out.println("+-----+--------------------------------------------------------------------------------+");
-             System.out.println("|  1  | Nhập số lượng và sản phẩm cần thêm.                                            |");
-             System.out.println("|  2  | Hiển thị thông tin các sản phẩm.                                               |");
-             System.out.println("|  3  | Sắp xếp sản phẩm theo giá tăng dần.                                            |");
-             System.out.println("|  4  | Xóa sản phẩm theo mã sản phẩm.                                                 |");
-             System.out.println("|  5  | Tìm kiếm sản phẩm theo tên sản phẩm.                                           |");
+             System.out.println("|  1  | Thêm mới sản phẩm.                                                             |");
+             System.out.println("|  2  | Hiển thị thông tin  sản phẩm.                                                  |");
+             System.out.println("|  3  | Sắp xếp sản phẩm theo giá .                                                    |");
+             System.out.println("|  4  | Xóa sản phẩm  .                                                                |");
+             System.out.println("|  5  | Tìm kiếm sản phẩm (tên).                                                       |");
              System.out.println("|  6  | Chỉnh sửa thông tin sản phẩm.                                                  |");
              System.out.println("|  7  | Quay lại trang Admin.                                                          |");
              System.out.println("+-----+--------------------------------------------------------------------------------+");
@@ -97,6 +97,9 @@ public class ProductManager  {
         System.out.print("| Nhập vào tên sản phẩm cần tìm kiếm : ");
         String text = InputMethods.getString();
         for (Product p : productController.findAll()) {
+            if (p.getStock()==0){
+                p.setStatus(false);
+            }
             if (p.getProductName().toLowerCase().contains(text.toLowerCase())) {
                 System.out.println(p);
                 flag = true;

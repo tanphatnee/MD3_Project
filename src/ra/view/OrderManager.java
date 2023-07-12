@@ -1,4 +1,5 @@
 package ra.view;
+import com.sun.xml.internal.bind.v2.TODO;
 import ra.config.InputMethods;
 import ra.controller.OrderController;
 import ra.controller.ProductController;
@@ -10,8 +11,6 @@ import java.util.List;
 
 public class OrderManager {
     private OrderController orderController;
-
-
     public OrderManager() {
         orderController = new OrderController();
         while (true) {
